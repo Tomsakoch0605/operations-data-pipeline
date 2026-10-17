@@ -1,0 +1,25 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "operations-data-pipeline-demo"
+version = "1.0.0"
+description = "Independent synthetic operations data pipeline with a local mock API"
+readme = "README.md"
+requires-python = ">=3.10"
+authors = [{name = "Portfolio demonstration"}]
+dependencies = []
+
+[project.optional-dependencies]
+dev = ["pytest>=8,<10"]
+
+[project.scripts]
+ops-pipeline = "operations_pipeline.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-q"
